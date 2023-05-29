@@ -252,7 +252,7 @@ class Document:
 
     @classmethod
     def _render(cls, html, font_config, counter_style, options):
-        # TODO: to be removed before v50.0b1 is released
+        # TODO: to be removed before v60.0b1 is released
         deprecated = {
             'image_cache', 'identifier', 'variant', 'version', 'forms',
             'optimize_size'}
