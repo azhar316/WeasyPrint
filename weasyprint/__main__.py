@@ -168,7 +168,9 @@ def main(argv=None, stdout=None, stdin=None, HTML=HTML):
         warn(
             'The --optimize-size option is now deprecated '
             'and will be removed in next version. '
-            'Please use the other options available in --help instead.',
+            'Please use the other options available in --help instead.\n'
+            'https://doc.courtbouillon.org/weasyprint/stable'
+            '/changelog.html#version-59-0b1',
             category=FutureWarning)
         for arg in args.optimize_size:
             if arg == 'none':

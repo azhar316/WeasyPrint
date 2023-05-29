@@ -4,6 +4,7 @@ import functools
 import io
 from hashlib import md5
 from pathlib import Path
+from warnings import warn
 
 from . import CSS, DEFAULT_OPTIONS
 from .anchors import gather_anchors, make_page_bookmark_tree
@@ -251,6 +252,18 @@ class Document:
 
     @classmethod
     def _render(cls, html, font_config, counter_style, options):
+        # TODO: to be removed before v50.0b1 is released
+        deprecated = {
+            'image_cache', 'identifier', 'variant', 'version', 'forms',
+            'optimize_size'}
+        for key in deprecated & set(options):
+            warn(
+                f'The {key} parameter is now ignored. '
+                'Please use the other options as explained in documentation.\n'
+                'https://doc.courtbouillon.org/weasyprint/stable'
+                '/changelog.html#version-59-0b1',
+                category=FutureWarning)
+
         if font_config is None:
             font_config = FontConfiguration()
 
