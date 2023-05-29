@@ -93,8 +93,8 @@ Python API:
 
 * The ``optimize_size`` parameter of ``HTML.render()``, ``HTML.write_pdf()``
   and ``Document()`` has been removed and will be ignored. You can now use the
-  ``uncompressed_pdf``, ``full_fonts``, ``hinting``, ``dpi`` and
-  ``jpeg_quality`` parameters that are included in ``**options``.
+  ``uncompressed_pdf``, ``full_fonts``, ``hinting``, ``optimize_images``,
+  ``dpi`` and ``jpeg_quality`` parameters that are included in ``**options``.
 
 * The ``cache`` parameter can be included in ``**options`` to replace
   ``image_cache``. If it is a dictionary, this dictionary will be used to store
